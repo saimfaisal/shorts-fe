@@ -138,7 +138,7 @@ export const ShortsForm = ({ onSubmit, isLoading, onResetResult }) => {
   return (
     <form onSubmit={handleSubmit} className="space-y-6" noValidate>
       <div className="space-y-2">
-        <label htmlFor="youtubeUrl" className="text-sm font-medium text-slate-200">
+        <label htmlFor="youtubeUrl" className="text-sm font-medium text-slate-700">
           YouTube Video URL
         </label>
         <input
@@ -148,7 +148,7 @@ export const ShortsForm = ({ onSubmit, isLoading, onResetResult }) => {
           placeholder="https://www.youtube.com/watch?v=..."
           value={values.youtubeUrl}
           onChange={handleChange("youtubeUrl")}
-          className="w-full rounded-lg border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 transition focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/40"
+          className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-black placeholder:text-slate-400 shadow-sm transition focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/40"
           autoComplete="off"
           required
         />
@@ -161,7 +161,7 @@ export const ShortsForm = ({ onSubmit, isLoading, onResetResult }) => {
 
       <div className="grid gap-6 sm:grid-cols-2">
         <div className="space-y-2">
-          <label htmlFor="duration" className="text-sm font-medium text-slate-200">
+          <label htmlFor="duration" className="text-sm font-medium text-slate-700">
             Short Duration (seconds)
           </label>
           <input
@@ -172,7 +172,7 @@ export const ShortsForm = ({ onSubmit, isLoading, onResetResult }) => {
             placeholder="15"
             value={values.duration}
             onChange={handleChange("duration")}
-            className="w-full rounded-lg border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 transition focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/40"
+            className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-black placeholder:text-slate-400 shadow-sm transition focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/40"
             required
           />
           {errors.duration && (
@@ -183,7 +183,7 @@ export const ShortsForm = ({ onSubmit, isLoading, onResetResult }) => {
         </div>
 
         <div className="space-y-2">
-          <label htmlFor="startTime" className="text-sm font-medium text-slate-200">
+          <label htmlFor="startTime" className="text-sm font-medium text-slate-700">
             Start Time (optional)
           </label>
           <input
@@ -193,14 +193,14 @@ export const ShortsForm = ({ onSubmit, isLoading, onResetResult }) => {
             placeholder="e.g. 1:20 or 80"
             value={values.startTime}
             onChange={handleChange("startTime")}
-            className="w-full rounded-lg border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 transition focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/40"
+            className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-black placeholder:text-slate-400 shadow-sm transition focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/40"
           />
           {errors.startTime ? (
             <p className="text-sm text-rose-400" role="alert">
               {errors.startTime}
             </p>
           ) : (
-            <p className="text-sm text-slate-400">Use seconds or HH:MM:SS.</p>
+            <p className="text-sm text-slate-500">Use seconds or HH:MM:SS.</p>
           )}
         </div>
       </div>
@@ -208,7 +208,7 @@ export const ShortsForm = ({ onSubmit, isLoading, onResetResult }) => {
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <button
           type="submit"
-          className="inline-flex w-full items-center justify-center rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-brand/30 transition hover:bg-brand-dark focus:outline-none focus:ring-2 focus:ring-brand/40 disabled:cursor-not-allowed disabled:bg-slate-700 sm:w-auto"
+          className="inline-flex w-full items-center justify-center rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-brand/30 transition hover:bg-brand-dark focus:outline-none focus:ring-2 focus:ring-brand/40 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-500 sm:w-auto"
           disabled={Boolean(isLoading)}
         >
           {isLoading ? "Generating…" : "Generate Short"}
@@ -216,7 +216,7 @@ export const ShortsForm = ({ onSubmit, isLoading, onResetResult }) => {
         <button
           type="button"
           onClick={handleReset}
-          className="inline-flex w-full items-center justify-center rounded-lg border border-slate-700 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:border-slate-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-slate-500/50 sm:w-auto"
+          className="inline-flex w-full items-center justify-center rounded-lg bg-black px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-700 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-500 sm:w-auto"
           disabled={isLoading || isPristine}
         >
           Reset

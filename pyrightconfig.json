@@ -1,0 +1,12 @@
+{
+  "include": ["backend"],
+  "executionEnvironments": [
+    {
+      "root": "backend",
+      "extraPaths": [
+        "backend",
+        "/home/saim/.local/lib/python3.10/site-packages"
+      ]
+    }
+  ]
+}

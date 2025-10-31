@@ -41,10 +41,10 @@ export const ResultCard = ({ result }) => {
             </p>
           </div>
 
-          {result.message && (
+          {result.error_message && (
             <div>
-              <p className="text-xs uppercase tracking-wide text-slate-400">Message</p>
-              <p className="mt-1 text-sm text-slate-200">{result.message}</p>
+              <p className="text-xs uppercase tracking-wide text-slate-400">Details</p>
+              <p className="mt-1 text-sm text-rose-300">{result.error_message}</p>
             </div>
           )}
         </div>
@@ -63,7 +63,9 @@ export const ResultCard = ({ result }) => {
           </div>
         ) : (
           <p className="text-sm text-slate-400">
-            The backend did not return a file URL. Check the status or try again in a moment.
+            {result.status === "processing"
+              ? "The backend is still working on your short. Keep this page open and the download link will appear when ready."
+              : "The backend did not return a file URL. Check the status or try again in a moment."}
           </p>
         )}
       </div>
